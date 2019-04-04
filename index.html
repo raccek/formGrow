@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GROW Formularz</title>
+    <meta name="author" content="Robert Rak">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"> </script>
+
+</head>
+<body>
+<form id="growForm" action="" method="POST">
+<!-- <form id="growForm" action="https://s885580810.t.eloqua.com/e/f2" method="POST"> -->
+    <h2>Form GROW Robert Rak</h2>
+    <div class="tab">Krok 1
+        <p><input placeholder="Imię" name="firstName" type="text" class="inputText" pattern="[A-Za-z]{2}" title="Podaj minimum dwa znaki" oninput="this.className = ''" required></p>
+        <p><input placeholder="Nazwisko" name="lastName" type="text" class="inputText" pattern="[A-Za-z]{2}" title="Podaj minimum dwa znaki" oninput="this.className = ''" required></p>
+        <p><input placeholder="Email" name="emailAddress" type="text" class="inputText" oninput="this.className = ''" required></p>
+    </div>
+    <div class="tab">Krok 2
+        <p class="inputSelect"><label class="label">Najbardziej polecane państwo do odwiedzenia?</label><br>
+        <select class="sform" name="bestCountry" required>
+            <option disabled selected value> -- Wybierz jedno Państwo -- </option>
+            <option value="polska">Polska</option>
+            <option value="francja">Francja</option>
+            <option value="hiszpania">Hiszpania</option>
+            <option value="portugalia">Portugalia</option>
+        </select></p>
+        <p><label class="label">Wolisz psy czy koty?</label></p>
+        <p><label class="label"><input name="favouritePet" type="radio" value="Kot" oninput="this.className = ''" >Kot</label></p>
+        <p><label class="label"><input name="favouritePet" type="radio" value="Pies" oninput="this.className = ''" required>Pies</label></p>
+        <p><label class="label"><input placeholder="Szczęśliwa liczba" name="luckyNumer" type="number" oninput="this.className = ''"></label></p>
+    </div>
+    <div class="tab">Krok3 
+        <p><input type="checkbox" required name="legalConsent1"> Wyrażam zgodę nr 1 </p>
+        <p><input type="checkbox" required name="legalConsent2"> Wyrażam zgodę nr 2 </p>
+        <input type="hidden" name="elqFormName" value="recruitment"></p>
+        <input type="hidden" name="elqSiteID" value="885580810"></p>
+    </div>
+    <div style="overflow:auto;">
+        <div style="float:right;">
+            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Wróć</button>
+            <button type="button" id="nextBtn" onclick="nextPrev(1)">Dalej</button>
+        </div>
+    </div>
+    
+    <div style="text-align:center;margin-top:40px;">
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+    </div>
+
+</form>
+     
+<script src="js/form.js"></script>
+</body>
+</html>
